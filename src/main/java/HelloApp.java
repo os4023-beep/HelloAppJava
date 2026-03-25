@@ -7,18 +7,8 @@ public class HelloApp {
             return;
         }
 
-        // Build names with delimiter
-        StringBuilder nameBuilder = new StringBuilder();
-
-        for (String name : args) {
-            nameBuilder.append(name).append(", ");
-        }
-
-        // Remove trailing ", "
-        String names = nameBuilder.toString();
-        if (names.length() > 0) {
-            names = names.substring(0, names.length() - 2);
-        }
+        // Join all names with ", "
+        String names = String.join(", ", args);
 
         // Final output
         System.out.println("Hello, " + names + "!");
